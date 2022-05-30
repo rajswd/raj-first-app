@@ -32,13 +32,13 @@ public class EmailDaoService {
 		   Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 		      protected PasswordAuthentication getPasswordAuthentication() {
 		    	 // Genearate app password to sent an email. 
-		         return new PasswordAuthentication("singhraj.swd@gmail.com", "seodfjpbcvenjmvl");
+		         return new PasswordAuthentication("<Sender email>", "<password>");
 		      }
 		   });
 		   Message msg = new MimeMessage(session);
-		   msg.setFrom(new InternetAddress("singhraj.swd@gmail.com", false));
+		   msg.setFrom(new InternetAddress("<Sender Email>", false));
 
-		   msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("raj.swd1@gmail.com"));
+		   msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("<Receiver Email id>"));
 		   msg.setSubject("Raj send email test");
 		   msg.setContent("<strong>Dear,</strong><br><br> <p> This is an email template test for testing using java email api.</p>", "text/html");
 		   msg.setSentDate(new Date());
